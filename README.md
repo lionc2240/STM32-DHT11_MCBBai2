@@ -1,12 +1,12 @@
-# Hướng dẫn kết nối phần cứng cho STM32, DHT11 và USB-TTL
+# Hướng dẫn kết nối phần cứng cho STM32, DHT11 và USB-TTL và hiển thị dữ liệu lên Hercules
 
-Tài liệu này cung cấp hướng dẫn chi tiết về cách kết nối cảm biến DHT11, mạch chuyển đổi USB-TTL và ST-Link V2 với bo mạch STM32, dựa trên cấu hình dự án hiện tại của bạn.
+Tài liệu này cung cấp hướng dẫn chi tiết về cách kết nối cảm biến DHT11, mạch chuyển đổi USB-TTL và ST-Link V2 với bo mạch STM32 và cách hiển thị dữ liệu lên Hercules.
 
 ---
 
 ### 1. Phân tích mã nguồn
 
-Trước khi tiến hành kết nối, chúng ta hãy xem xét các chân GPIO được sử dụng trong mã nguồn của bạn:
+Trước khi tiến hành kết nối, chúng ta hãy xem xét các chân GPIO được sử dụng trong mã nguồn:
 
 *   **File `USER\main.c`:**
     *   Các hàm như `GPIO_Config()`, `DHT11_Start()`, và `DHT11_Read_Byte()` đều sử dụng chân **PB12**. Điều này có nghĩa là chân DATA của cảm biến DHT11 được kết nối với chân **PB12** trên STM32 của bạn.
