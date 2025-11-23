@@ -1,12 +1,13 @@
 # Hướng dẫn kết nối phần cứng cho STM32, DHT11 và USB-TTL và hiển thị dữ liệu lên Hercules
 
 Tài liệu này cung cấp hướng dẫn chi tiết về:
-*   [Phân tích mã nguồn](#1-phan-tich-ma-nguon)
-*   [Hướng dẫn kết nối chi tiết](#2-huong-dan-ket-noi-chi-tiet)
-    *   [Kết nối Cảm biến DHT11](#a-ket-noi-cam-bien-dht11)
-    *   [Kết nối Mạch chuyển đổi USB-TTL](#b-ket-noi-mach-chuyen-doi-usb-ttl-de-theo-doi-du-lieu-serial)
-    *   [Kết nối ST-Link V2](#c-ket-noi-st-link-v2-de-nap-chuong-trinh-va-go-loi)
-    *   [Hiển thị dữ liệu lên Hercules SETUP Utility](#d-hien-thi-du-lieu-len-hercules-setup-utility)
+- [Hướng dẫn kết nối phần cứng cho STM32, DHT11 và USB-TTL và hiển thị dữ liệu lên Hercules](#hướng-dẫn-kết-nối-phần-cứng-cho-stm32-dht11-và-usb-ttl-và-hiển-thị-dữ-liệu-lên-hercules)
+    - [1. Phân tích mã nguồn](#1-phân-tích-mã-nguồn)
+    - [2. Hướng dẫn kết nối chi tiết](#2-hướng-dẫn-kết-nối-chi-tiết)
+      - [A. Kết nối Cảm biến DHT11](#a-kết-nối-cảm-biến-dht11)
+      - [B. Kết nối Mạch chuyển đổi USB-TTL (để theo dõi dữ liệu Serial)](#b-kết-nối-mạch-chuyển-đổi-usb-ttl-để-theo-dõi-dữ-liệu-serial)
+      - [C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)](#c-kết-nối-st-link-v2-để-nạp-chương-trình-và-gỡ-lỗi)
+      - [D. Hiển thị dữ liệu lên Hercules SETUP Utility](#d-hiển-thị-dữ-liệu-lên-hercules-setup-utility)
 
 ---
 
@@ -41,7 +42,7 @@ Mạch này giúp bạn xem dữ liệu nhiệt độ và độ ẩm mà STM32 g
 *   **TX (của USB-TTL):** Nối vào chân **PA10** (chân RX của STM32) trên bo mạch STM32.
 *   **GND:** Nối vào chân **GND** trên bo mạch STM32.
 
-Sau khi kết nối, hãy cắm mạch USB-TTL vào máy tính. Bạn cần mở một phần mềm terminal (ví dụ: PuTTY, Tera Term, hoặc Serial Monitor trong Arduino IDE), chọn đúng cổng COM và cài đặt tốc độ Baud Rate là **9600** để đọc dữ liệu.
+Sau khi kết nối, hãy cắm mạch USB-TTL vào máy tính. Bạn cần mở một phần mềm terminal (ví dụ: [Hercules SETUP Utility](#d-hien-thi-du-lieu-len-hercules-setup-utility), PuTTY, Tera Term, hoặc Serial Monitor trong Arduino IDE), chọn đúng cổng COM và cài đặt tốc độ Baud Rate là **9600** để đọc dữ liệu.
 
 #### C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)
 
