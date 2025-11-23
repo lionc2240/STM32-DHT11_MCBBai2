@@ -72,9 +72,9 @@ Sau khi đã nạp code thành công và kết nối mạch USB-TTL với máy t
     *   **Name:** Chọn cổng COM tương ứng với mạch USB-TTL của bạn. (Bạn có thể kiểm tra cổng COM đang sử dụng trong Device Manager của Windows, phần `Ports (COM & LPT)`).
     *   **Baud:** Đặt là `9600` (Đây là tốc độ baud rate được cấu hình trong code STM32 của bạn).
     *   **Data Size:** Đặt là `8` (8 bit dữ liệu).
-    *   **Parity:** Đặt là `None` (Không kiểm tra chẵn lẻ).
-    *   **Stop Bits:** Đặt là `1` (1 bit dừng).
-    *   **HandShake:** Đặt là `Off` (Tắt kiểm soát luồng).
+    *   **Parity:** (Giữ nguyên) Đặt là `None` (Không kiểm tra chẵn lẻ).
+    *   **HandShake:** (Giữ nguyên) Đặt là `Off` (Tắt kiểm soát luồng).
+    *   **Mode:** (Giữ nguyên) Free
 
 4.  **Mở kết nối:**
     *   Nhấn nút **Open** để bắt đầu kết nối với STM32.
