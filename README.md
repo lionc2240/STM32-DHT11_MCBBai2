@@ -41,8 +41,8 @@ Sau khi kết nối, hãy cắm mạch USB-TTL vào máy tính. Bạn cần mở
 
 ST-Link V2 được sử dụng để nạp firmware (chương trình) vào STM32 và để gỡ lỗi (debug) quá trình hoạt động của vi điều khiển.
 
-*   **SWDIO (ST-Link Pin 7):** Nối vào chân tương ứng trên bo mạch STM32 (thường là PA13).
-*   **SWCLK (ST-Link Pin 9):** Nối vào chân tương ứng trên bo mạch STM32 (thường là PA14).
+*   **SWDIO (ST-Link Pin 7):** Nối vào chân tương ứng trên bo mạch STM32.
+*   **SWCLK (ST-Link Pin 9):** Nối vào chân tương ứng trên bo mạch STM32.
 *   **GND (ST-Link Pin 4 hoặc 6):** Nối vào chân **GND** trên bo mạch STM32.
 *   **3.3V (ST-Link Pin 1 hoặc 2):** Nối vào chân **3.3V** trên bo mạch STM32.
     *   *Lưu ý:* Chân này có thể dùng để cấp nguồn cho STM32 thông qua ST-Link, hoặc chỉ để ST-Link đọc điện áp tham chiếu của bo mạch. Nếu bạn đã cấp nguồn cho STM32 qua USB-TTL hoặc một nguồn khác, việc kết nối chân 3.3V này là tùy chọn hoặc chỉ cần để nhận biết mức logic.
