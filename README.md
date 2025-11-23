@@ -42,7 +42,7 @@ Mạch này giúp bạn xem dữ liệu nhiệt độ và độ ẩm mà STM32 g
 *   **TX (của USB-TTL):** Nối vào chân **PA10** (chân RX của STM32) trên bo mạch STM32.
 *   **GND:** Nối vào chân **GND** trên bo mạch STM32.
 
-Sau khi kết nối, hãy cắm mạch USB-TTL vào máy tính. Bạn cần mở một phần mềm terminal (ví dụ: [Hercules SETUP Utility](#d-hien-thi-du-lieu-len-hercules-setup-utility), PuTTY, Tera Term, hoặc Serial Monitor trong Arduino IDE), chọn đúng cổng COM và cài đặt tốc độ Baud Rate là **9600** để đọc dữ liệu.
+Sau khi kết nối, hãy cắm mạch USB-TTL vào máy tính. Bạn cần mở một phần mềm terminal (ví dụ: [Hercules SETUP Utility](#d-hiển-thị-dữ-liệu-lên-hercules-setup-utility), PuTTY, Tera Term, hoặc Serial Monitor trong Arduino IDE), chọn đúng cổng COM và cài đặt tốc độ Baud Rate là **9600** để đọc dữ liệu.
 
 #### C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)
 
