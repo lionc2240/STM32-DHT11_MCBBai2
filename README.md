@@ -2,16 +2,16 @@
 
 Tài liệu này cung cấp hướng dẫn chi tiết về:
 - [Hướng dẫn kết nối phần cứng cho STM32, DHT11 và USB-TTL và hiển thị dữ liệu lên Hercules](#hướng-dẫn-kết-nối-phần-cứng-cho-stm32-dht11-và-usb-ttl-và-hiển-thị-dữ-liệu-lên-hercules)
-    - [1. Phân tích mã nguồn](#1-phân-tích-mã-nguồn)
-    - [2. Hướng dẫn kết nối chi tiết](#2-hướng-dẫn-kết-nối-chi-tiết)
-      - [A. Kết nối Cảm biến DHT11](#a-kết-nối-cảm-biến-dht11)
-      - [B. Kết nối Mạch chuyển đổi USB-TTL (để theo dõi dữ liệu Serial)](#b-kết-nối-mạch-chuyển-đổi-usb-ttl-để-theo-dõi-dữ-liệu-serial)
-      - [C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)](#c-kết-nối-st-link-v2-để-nạp-chương-trình-và-gỡ-lỗi)
-      - [D. Hiển thị dữ liệu lên Hercules SETUP Utility](#d-hiển-thị-dữ-liệu-lên-hercules-setup-utility)
+  - [1. Phân tích mã nguồn](#1-phân-tích-mã-nguồn)
+  - [2. Hướng dẫn kết nối chi tiết](#2-hướng-dẫn-kết-nối-chi-tiết)
+    - [A. Kết nối Cảm biến DHT11](#a-kết-nối-cảm-biến-dht11)
+    - [B. Kết nối Mạch chuyển đổi USB-TTL (để theo dõi dữ liệu Serial)](#b-kết-nối-mạch-chuyển-đổi-usb-ttl-để-theo-dõi-dữ-liệu-serial)
+    - [C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)](#c-kết-nối-st-link-v2-để-nạp-chương-trình-và-gỡ-lỗi)
+    - [D. Hiển thị dữ liệu lên Hercules SETUP Utility](#d-hiển-thị-dữ-liệu-lên-hercules-setup-utility)
 
 ---
 
-### 1. Phân tích mã nguồn
+## 1. Phân tích mã nguồn
 
 Trước khi tiến hành kết nối, chúng ta hãy xem xét các chân GPIO được sử dụng trong mã nguồn:
 
@@ -20,11 +20,11 @@ Trước khi tiến hành kết nối, chúng ta hãy xem xét các chân GPIO �
 *   **File `USER\usart1.c`:**
     *   Hàm `USART1_DEBUG_Init()` cấu hình chân **PA9** làm chân TX (truyền dữ liệu) và chân **PA10** làm chân RX (nhận dữ liệu) cho giao tiếp USART1.
 
-### 2. Hướng dẫn kết nối chi tiết
+## 2. Hướng dẫn kết nối chi tiết
 
 Dựa trên phân tích mã nguồn và các tiêu chuẩn kết nối, bạn hãy thực hiện như sau:
 
-#### A. Kết nối Cảm biến DHT11
+### A. Kết nối Cảm biến DHT11
 
 Cảm biến DHT11 cần ba chân cơ bản: VCC (nguồn), DATA (dữ liệu), và GND (nối đất).
 
@@ -34,7 +34,7 @@ Cảm biến DHT11 cần ba chân cơ bản: VCC (nguồn), DATA (dữ liệu), 
 
 **Lưu ý quan trọng:** Để đảm bảo tín hiệu DATA ổn định, đặc biệt trong môi trường nhiễu hoặc khi dây dài, bạn nên thêm một điện trở kéo lên (pull-up resistor) có giá trị từ **4.7kΩ đến 10kΩ** giữa chân **DATA** của DHT11 và chân **VCC**.
 
-#### B. Kết nối Mạch chuyển đổi USB-TTL (để theo dõi dữ liệu Serial)
+### B. Kết nối Mạch chuyển đổi USB-TTL (để theo dõi dữ liệu Serial)
 
 Mạch này giúp bạn xem dữ liệu nhiệt độ và độ ẩm mà STM32 gửi qua cổng Serial trên máy tính.
 
@@ -44,7 +44,7 @@ Mạch này giúp bạn xem dữ liệu nhiệt độ và độ ẩm mà STM32 g
 
 Sau khi kết nối, hãy cắm mạch USB-TTL vào máy tính. Bạn cần mở một phần mềm terminal (ví dụ: [Hercules SETUP Utility](#d-hiển-thị-dữ-liệu-lên-hercules-setup-utility), PuTTY, Tera Term, hoặc Serial Monitor trong Arduino IDE), chọn đúng cổng COM và cài đặt tốc độ Baud Rate là **9600** để đọc dữ liệu.
 
-#### C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)
+### C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)
 
 ST-Link V2 được sử dụng để nạp firmware (chương trình) vào STM32 và để gỡ lỗi (debug) quá trình hoạt động của vi điều khiển.
 
@@ -56,7 +56,7 @@ ST-Link V2 được sử dụng để nạp firmware (chương trình) vào STM3
 
 Sau khi kết nối ST-Link V2, bạn có thể sử dụng các công cụ lập trình như Keil uVision, STM32CubeIDE hoặc STM32 ST-Link Utility để nạp chương trình và gỡ lỗi.
 
-#### D. Hiển thị dữ liệu lên Hercules SETUP Utility
+### D. Hiển thị dữ liệu lên Hercules SETUP Utility
 
 Sau khi đã nạp code thành công và kết nối mạch USB-TTL với máy tính, bạn có thể sử dụng phần mềm Hercules SETUP Utility để hiển thị dữ liệu từ STM32.
 
