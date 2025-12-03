@@ -1,14 +1,5 @@
 # Hướng dẫn kết nối phần cứng cho STM32, DHT11 và USB-TTL và hiển thị dữ liệu lên Hercules
 
-Tài liệu này cung cấp hướng dẫn chi tiết về:
-- [Hướng dẫn kết nối phần cứng cho STM32, DHT11 và USB-TTL và hiển thị dữ liệu lên Hercules](#hướng-dẫn-kết-nối-phần-cứng-cho-stm32-dht11-và-usb-ttl-và-hiển-thị-dữ-liệu-lên-hercules)
-  - [1. Phân tích mã nguồn](#1-phân-tích-mã-nguồn)
-  - [2. Hướng dẫn kết nối chi tiết](#2-hướng-dẫn-kết-nối-chi-tiết)
-    - [A. Kết nối Cảm biến DHT11](#a-kết-nối-cảm-biến-dht11)
-    - [B. Kết nối Mạch chuyển đổi USB-TTL (để theo dõi dữ liệu Serial)](#b-kết-nối-mạch-chuyển-đổi-usb-ttl-để-theo-dõi-dữ-liệu-serial)
-    - [C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)](#c-kết-nối-st-link-v2-để-nạp-chương-trình-và-gỡ-lỗi)
-    - [D. Hiển thị dữ liệu lên Hercules SETUP Utility](#d-hiển-thị-dữ-liệu-lên-hercules-setup-utility)
-
 ---
 ## Hướng dẫn kết nối chi tiết
 | **Thiết bị** | **Chân trên thiết bị** | **Kết nối tới** | **Chân trên STM32** | **Ghi chú** |
