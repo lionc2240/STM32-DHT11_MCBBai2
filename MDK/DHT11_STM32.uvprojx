@@ -373,7 +373,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\RTE;..\USER</IncludePath>
+              <IncludePath>.\RTE;..\USER;.\RTE\Device\STM32F103C8</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

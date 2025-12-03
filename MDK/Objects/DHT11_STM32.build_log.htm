@@ -21,23 +21,25 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
 Dialog DLL:      TCM.DLL V1.14.6.0
  
 <h2>Project:</h2>
-D:\04.TAI LIEU\Sensor Network\BaiTHso2_UART,I2C,SPI\UART\Bai2_DHT11_STM32-main\Bai2_DHT11_STM32-main\MDK\DHT11_STM32.uvprojx
-Project File Date:  11/25/2025
+D:\04.TAI LIEU\Sensor Network\Bai-2_UART,I2C,SPI\UART\git-b2\MDK\DHT11_STM32.uvprojx
+Project File Date:  12/03/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\Program Files\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
+compiling misc.c...
 compiling usart1.c...
-..\USER\stm32f10x_conf.h(17): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\usart1.c: 1 warning, 0 errors
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_usart.c...
+compiling system_stm32f10x.c...
 compiling main.c...
-..\USER\stm32f10x_conf.h(17): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\USER\main.c: 1 warning, 0 errors
+compiling stm32f10x_exti.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_tim.c...
 linking...
-Program Size: Code=2768 RO-data=268 RW-data=28 ZI-data=1732  
-".\Objects\DHT11_STM32.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=2776 RO-data=268 RW-data=28 ZI-data=1732  
+".\Objects\DHT11_STM32.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -53,16 +55,16 @@ Package Vendor: Keil
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
    * Component: Startup Version: 1.0.0
    * Component: Framework Version: 3.6.0
-   * Component: I2C Version: 3.6.0
    * Component: EXTI Version: 3.6.0
    * Component: TIM Version: 3.6.0
-   * Component: GPIO Version: 3.6.0
    * Component: RCC Version: 3.6.0
+   * Component: GPIO Version: 3.6.0
    * Component: USART Version: 3.6.0
+   * Component: I2C Version: 3.6.0
 
 <h2>Collection of Component include folders:</h2>
-  D:\04.TAI LIEU\Sensor Network\BaiTHso2_UART,I2C,SPI\UART\Bai2_DHT11_STM32-main\Bai2_DHT11_STM32-main\MDK\RTE
-  D:\04.TAI LIEU\Sensor Network\BaiTHso2_UART,I2C,SPI\UART\Bai2_DHT11_STM32-main\Bai2_DHT11_STM32-main\MDK\RTE\Device\STM32F103C8
+  D:\04.TAI LIEU\Sensor Network\Bai-2_UART,I2C,SPI\UART\git-b2\MDK\RTE
+  D:\04.TAI LIEU\Sensor Network\Bai-2_UART,I2C,SPI\UART\git-b2\MDK\RTE\Device\STM32F103C8
   D:\Program Files\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
   D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1\Device\Include
   D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc
@@ -72,21 +74,17 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:4.3.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Source file:   Device\Source\system_stm32f10x.c
-      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
 
    * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\misc.c
       Include file:  Device\StdPeriph_Driver\inc\misc.h
-      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Source file:   Device\StdPeriph_Driver\src\misc.c
       Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
       Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
-
-   * Component: Keil::Device:StdPeriph Drivers:I2C:3.6.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_i2c.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_i2c.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
 
    * Component: Keil::Device:StdPeriph Drivers:EXTI:3.6.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_exti.h
@@ -96,17 +94,21 @@ Package Vendor: Keil
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
 
-   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
-
    * Component: Keil::Device:StdPeriph Drivers:RCC:3.6.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
 
    * Component: Keil::Device:StdPeriph Drivers:USART:3.6.0
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
+
+   * Component: Keil::Device:StdPeriph Drivers:I2C:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_i2c.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_i2c.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

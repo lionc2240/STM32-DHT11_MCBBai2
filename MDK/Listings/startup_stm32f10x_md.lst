@@ -475,15 +475,14 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\objects\startup_stm32f10x_md.d -o.\objects\startup_stm32f10x_md.
-o -I"D:\04.TAI LIEU\Sensor Network\BaiTHso2_UART,I2C,SPI\UART\Bai2_DHT11_STM32-
-main\Bai2_DHT11_STM32-main\MDK\RTE" -I"D:\04.TAI LIEU\Sensor Network\BaiTHso2_U
-ART,I2C,SPI\UART\Bai2_DHT11_STM32-main\Bai2_DHT11_STM32-main\MDK\RTE\Device\STM
-32F103C8" -I"D:\Program Files\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include" -
-I"D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1\Device\Include" -I
-"D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Dr
-iver\inc" --predefine="__UVISION_VERSION SETA 517" --predefine="_RTE_ SETA 1" -
--predefine="STM32F10X_MD SETA 1" --list=.\listings\startup_stm32f10x_md.lst RTE
-\Device\STM32F103C8\startup_stm32f10x_md.s
+o -I"D:\04.TAI LIEU\Sensor Network\Bai-2_UART,I2C,SPI\UART\git-b2\MDK\RTE" -I"D
+:\04.TAI LIEU\Sensor Network\Bai-2_UART,I2C,SPI\UART\git-b2\MDK\RTE\Device\STM3
+2F103C8" -I"D:\Program Files\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include" -I
+"D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1\Device\Include" -I"
+D:\Program Files\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Dri
+ver\inc" --predefine="__UVISION_VERSION SETA 517" --predefine="_RTE_ SETA 1" --
+predefine="STM32F10X_MD SETA 1" --list=.\listings\startup_stm32f10x_md.lst RTE\
+Device\STM32F103C8\startup_stm32f10x_md.s
 
 
 
