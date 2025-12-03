@@ -10,17 +10,7 @@ Tài liệu này cung cấp hướng dẫn chi tiết về:
     - [D. Hiển thị dữ liệu lên Hercules SETUP Utility](#d-hiển-thị-dữ-liệu-lên-hercules-setup-utility)
 
 ---
-
-## 1. Phân tích mã nguồn
-
-Trước khi tiến hành kết nối, chúng ta hãy xem xét các chân GPIO được sử dụng trong mã nguồn:
-
-*   **File `USER\main.c`:**
-    *   Các hàm như `GPIO_Config()`, `DHT11_Start()`, và `DHT11_Read_Byte()` đều sử dụng chân **PB12**. Điều này có nghĩa là chân DATA của cảm biến DHT11 được kết nối với chân **PB12** trên STM32 của bạn.
-*   **File `USER\usart1.c`:**
-    *   Hàm `USART1_DEBUG_Init()` cấu hình chân **PA9** làm chân TX (truyền dữ liệu) và chân **PA10** làm chân RX (nhận dữ liệu) cho giao tiếp USART1.
-
-## 2. Hướng dẫn kết nối chi tiết
+## Hướng dẫn kết nối chi tiết
 | **Thiết bị** | **Chân trên thiết bị** | **Kết nối tới** | **Chân trên STM32** | **Ghi chú** |
 |--------------|------------------------|-----------------|---------------------|-------------|
 | **DHT11** | VCC (Chân 1) | Nguồn | `3.3V` hoặc `5V` | Dùng 5V nếu DHT11 hỗ trợ; thường ổn hơn 3.3V |
@@ -34,7 +24,7 @@ Trước khi tiến hành kết nối, chúng ta hãy xem xét các chân GPIO �
 | | GND (Pin 4/6) | GND | `GND` | — |
 | | 3.3V (Pin 1/2) | 3.3V (tùy chọn) | `3.3V` | Dùng để cấp nguồn hoặc làm tham chiếu điện áp |
 
-## 3. Hiển thị dữ liệu lên Hercules SETUP Utility
+## Hiển thị dữ liệu lên Hercules SETUP Utility
 
 Sau khi đã nạp code thành công và kết nối mạch USB-TTL với máy tính, bạn có thể sử dụng phần mềm Hercules SETUP Utility để hiển thị dữ liệu từ STM32.
 
