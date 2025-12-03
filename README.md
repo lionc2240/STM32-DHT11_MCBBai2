@@ -21,42 +21,20 @@ Trước khi tiến hành kết nối, chúng ta hãy xem xét các chân GPIO �
     *   Hàm `USART1_DEBUG_Init()` cấu hình chân **PA9** làm chân TX (truyền dữ liệu) và chân **PA10** làm chân RX (nhận dữ liệu) cho giao tiếp USART1.
 
 ## 2. Hướng dẫn kết nối chi tiết
+| **Thiết bị** | **Chân trên thiết bị** | **Kết nối tới** | **Chân trên STM32** | **Ghi chú** |
+|--------------|------------------------|-----------------|---------------------|-------------|
+| **DHT11** | VCC (Chân 1) | Nguồn | `3.3V` hoặc `5V` | Dùng 5V nếu DHT11 hỗ trợ; thường ổn hơn 3.3V |
+| | DATA (Chân 2) | Dữ liệu | `PB12` |  (Cần điện trở kéo lên `4.7kΩ–10kΩ` giữa DATA và VCC) |
+| | GND (Chân 4) | Nối đất | `GND` | — |
+| **USB-TTL** | TX | RX | `PA10` |  *TX ↔ RX* chéo |
+| | RX | TX | `PA9` |  *RX ↔ TX* chéo |
+| | GND | GND | `GND` | — |
+| **ST-Link V2** | SWDIO (Pin 7) | SWDIO | `PA13` *(mặc định)* | Một số bo STM32F103 đã nối sẵn tới header SWD |
+| | SWCLK (Pin 9) | SWCLK | `PA14` *(mặc định)* | — |
+| | GND (Pin 4/6) | GND | `GND` | — |
+| | 3.3V (Pin 1/2) | 3.3V (tùy chọn) | `3.3V` | Dùng để cấp nguồn hoặc làm tham chiếu điện áp |
 
-Dựa trên phân tích mã nguồn và các tiêu chuẩn kết nối, bạn hãy thực hiện như sau:
-
-### A. Kết nối Cảm biến DHT11
-
-Cảm biến DHT11 cần ba chân cơ bản: VCC (nguồn), DATA (dữ liệu), và GND (nối đất).
-
-*   **VCC (Chân 1 trên DHT11):** Nối vào chân **3.3V** hoặc **5V** trên bo mạch STM32 của bạn.
-*   **DATA (Chân 2 trên DHT11):** Nối vào chân **PB12** trên bo mạch STM32.
-*   **GND (Chân 4 trên DHT11):** Nối vào chân **GND** trên bo mạch STM32.
-
-**Lưu ý quan trọng:** Để đảm bảo tín hiệu DATA ổn định, đặc biệt trong môi trường nhiễu hoặc khi dây dài, bạn nên thêm một điện trở kéo lên (pull-up resistor) có giá trị từ **4.7kΩ đến 10kΩ** giữa chân **DATA** của DHT11 và chân **VCC**.
-
-### B. Kết nối Mạch chuyển đổi USB-TTL (để theo dõi dữ liệu Serial)
-
-Mạch này giúp bạn xem dữ liệu nhiệt độ và độ ẩm mà STM32 gửi qua cổng Serial trên máy tính.
-
-*   **RX (của USB-TTL):** Nối vào chân **PA9** (chân TX của STM32) trên bo mạch STM32.
-*   **TX (của USB-TTL):** Nối vào chân **PA10** (chân RX của STM32) trên bo mạch STM32.
-*   **GND:** Nối vào chân **GND** trên bo mạch STM32.
-
-Sau khi kết nối, hãy cắm mạch USB-TTL vào máy tính. Bạn cần mở một phần mềm terminal (ví dụ: [Hercules SETUP Utility](#d-hiển-thị-dữ-liệu-lên-hercules-setup-utility), PuTTY, Tera Term, hoặc Serial Monitor trong Arduino IDE), chọn đúng cổng COM và cài đặt tốc độ Baud Rate là **9600** để đọc dữ liệu.
-
-### C. Kết nối ST-Link V2 (để nạp chương trình và gỡ lỗi)
-
-ST-Link V2 được sử dụng để nạp firmware (chương trình) vào STM32 và để gỡ lỗi (debug) quá trình hoạt động của vi điều khiển.
-
-*   **SWDIO (ST-Link Pin 7):** Nối vào chân tương ứng trên bo mạch STM32.
-*   **SWCLK (ST-Link Pin 9):** Nối vào chân tương ứng trên bo mạch STM32.
-*   **GND (ST-Link Pin 4 hoặc 6):** Nối vào chân **GND** trên bo mạch STM32.
-*   **3.3V (ST-Link Pin 1 hoặc 2):** Nối vào chân **3.3V** trên bo mạch STM32.
-    *   *Lưu ý:* Chân này có thể dùng để cấp nguồn cho STM32 thông qua ST-Link, hoặc chỉ để ST-Link đọc điện áp tham chiếu của bo mạch. Nếu bạn đã cấp nguồn cho STM32 qua USB-TTL hoặc một nguồn khác, việc kết nối chân 3.3V này là tùy chọn hoặc chỉ cần để nhận biết mức logic.
-
-Sau khi kết nối ST-Link V2, bạn có thể sử dụng các công cụ lập trình như Keil uVision, STM32CubeIDE hoặc STM32 ST-Link Utility để nạp chương trình và gỡ lỗi.
-
-### D. Hiển thị dữ liệu lên Hercules SETUP Utility
+## 3. Hiển thị dữ liệu lên Hercules SETUP Utility
 
 Sau khi đã nạp code thành công và kết nối mạch USB-TTL với máy tính, bạn có thể sử dụng phần mềm Hercules SETUP Utility để hiển thị dữ liệu từ STM32.
 
